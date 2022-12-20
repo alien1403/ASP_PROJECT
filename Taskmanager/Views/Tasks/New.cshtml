@@ -1,0 +1,47 @@
+﻿@model Taskmanager.Models.Task
+
+<h2 class="text-center mt-5">Adaugare task</h2>
+
+<br />
+
+            @using(Html.BeginForm(actionName: "New", controllerName: "Tasks", method: FormMethod.Post))
+            {
+                <div class="container mt-5 form-control">
+   
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                @Html.Label("Title", "Titlu Task",htmlAttributes: new{ @class = "control-label col-md-2"})
+                <br />
+                @Html.TextBox("Title", null, new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+                <br />
+
+                <br />
+
+                @Html.Label("Description", "Descriere Task")
+                <br />
+                @Html.TextArea("Description", null, new { @class = "form-control" })
+
+                @Html.ValidationMessage("Description", null, new { @class = "text-danger" })
+                <br />
+
+                @Html.Label("EndDate", "Data sfarsit Task")
+                <br />
+                @Html.EditorFor(m => m.EndDate, new {@type = "date"})
+
+                <br />
+
+                <label>Selectati statusul</label>
+                @Html.DropDownListFor(m => m.StatusId, new SelectList(Model.Stat, "Value", "Text"),
+            "Selectati categoria", new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(m => m.StatusId, null, new { @class = "text-danger" })
+                <br />
+                <input type="hidden" name="IdProject" value = "@Model.IdProject">
+                <br />
+
+                <button class="btn btn-success" type="submit">Adauga task</button>
+    </div>
+            }
+       

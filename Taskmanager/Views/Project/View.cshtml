@@ -1,0 +1,37 @@
+﻿@model Projects
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 class="text-center">@Model.Name</h1>
+            <p class="lead">@Model.Description</p>
+
+            <h2>Tasks</h2>
+            <ul>
+                @foreach (var i in @ViewBag.Tasks)
+                {
+                    <li onclick="window.location='/Tasks/Show/@i.Id'">@i.Title</li>
+                }
+            </ul>
+            <a class="btn btn-success btn-lg" href="/Tasks/New/@Model.Id">Adauga task</a>
+        </div>
+        <br />
+     
+    </div>
+    <hr />
+
+    @{
+        if(string.Compare(TempData["admin"].ToString(),"0") == 0 ){
+            <div class="w-100">
+                <form action="/Project/Delete" method="POST" class="form-horizontal d-inline-block">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <input type="hidden" name="team_id" value="@Model.IdTeam" />
+                    <button type="submit" class="btn btn-danger btn-lg">Delete </button>
+                </form>
+                <button class="btn btn-success btn-lg d-inline-block float-end" onclick="window.location='/Project/Edit/@Model.Id'">Edit</button>
+            </div>
+        }
+    }
+   
+    
+</div>

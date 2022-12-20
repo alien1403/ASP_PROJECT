@@ -1,0 +1,26 @@
+﻿@model Taskmanager.Models.Status
+
+
+@{
+    ViewBag.Title = "Editare status";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm(controllerName: "Statuses", actionName: "Edit", method: FormMethod.Post, 
+       routeValues: new { id = Model.Id }))
+    {
+    @Html.Label("StatusName", "Denumire status")
+        <br />
+    @Html.Editor("StatusName")
+
+        @Html.ValidationMessageFor(m => m.StatusName, null, new { @class = "text-danger" })
+        <br />
+
+        <br />
+
+        <button class="btn btn-success" type="submit">Modifica status</button>
+    }
+    
+

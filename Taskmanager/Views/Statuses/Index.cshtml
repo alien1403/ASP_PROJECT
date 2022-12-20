@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Lista statusuri";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />  
+
+@if (TempData.ContainsKey("message"))
+{
+    <h1>@ViewBag.message</h1>
+}
+
+
+<br />
+
+@foreach (var status in ViewBag.Statuses)
+{
+    @Html.Label("StatusName", "Denumire status")
+    <p>@status.StatusName</p>
+    <a class="btn alert-success" href="/Statuses/Show/@status.Id">Afisare status</a>
+    <a class="btn alert-success" href="/Statuses/Edit/@status.Id">Editare status</a>
+    <br />
+    <hr />
+    <br />
+}
+<br />
+<a class="btn btn-success" href="/Statuses/New">Adauga un nou status</a>
+<br />
+

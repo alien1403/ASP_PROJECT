@@ -1,0 +1,18 @@
+﻿@model Taskmanager.Models.Team
+
+<h1> Create Team</h1>
+@using (Html.BeginForm("Create","Team",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-control">
+        @Html.LabelFor(Model=>Model.Name, htmlAttributes: new{ @class = "control-label col-md-2"})
+        <div class="col-md-10">
+         @Html.EditorFor(Model=>Model.Name,new{ htmlAttributes = new{ @class = "form-control"}})
+        @Html.ValidationMessageFor(Model=>Model.Name,"", new{ @class ="text-danger"})
+        </div>
+   <br>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+    </div>
+}

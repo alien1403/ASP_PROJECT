@@ -1,0 +1,25 @@
+﻿@model Taskmanager.Models.Status
+
+
+@{
+    ViewBag.Title = "Adaugare Status";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(actionName: "New", controllerName: "Statuses", method: FormMethod.Post))
+{
+
+    @Html.Label("StatusName", "Denumire status")
+    <br />
+
+    @Html.TextBox("StatusName", null, new { @class = "form-control" })
+
+    @Html.ValidationMessageFor(m => m.StatusName, null, new { @class = "text-danger" })
+    <br /><br />
+
+    <button class="btn btn-success" type="submit">Adauga status</button>
+
+}
+

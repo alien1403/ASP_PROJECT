@@ -1,0 +1,35 @@
+﻿@model Taskmanager.Models.Team
+<h1>Edit Team</h1>
+
+@using (Html.BeginForm("Edit","Team",FormMethod.Post)){
+    @Html.AntiForgeryToken()
+    <div class="form-control">
+    @Html.LabelFor(Model=>Model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
+    <br />
+    <div class="col-md-10">
+    @Html.EditorFor(Model=>Model.Name, new{ htmlAttributes= new{@class = "form-control"}})
+    @Html.ValidationMessageFor(Model=>Model.Name,"",new{ @class = "text-danger"})
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+
+
+
+}
+
+
+
+
+
+
+@*@using (Html.BeginForm("Edit", "Team", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="teamName">Team Name</label>
+        <input type="text" class="form-control" id="teamName" name="name" placeholder="Enter new team name">
+        <input type="hidden" name="id_team" value="@ViewBag.id">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+*@

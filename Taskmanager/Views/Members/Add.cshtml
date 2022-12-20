@@ -1,0 +1,19 @@
+﻿@model Taskmanager.Models.ApplicationUser
+
+
+<h1>Add New Member</h1>
+@using (Html.BeginForm("Add","Members",FormMethod.Post)){
+    @Html.AntiForgeryToken()
+    
+    <div class="form-control">
+        @Html.LabelFor(Model=>Model.Email,htmlAttributes: new{@class = "control-label col-md-2"})
+        <br>
+        @Html.EditorFor(Model=>Model.Email ,null,new{ htmlAttributes = new {@class = "form-control"}})
+        @Html.ValidationMessageFor(Model=>Model.Email,"", htmlAttributes: new{@class = "text-danger"})
+        <br>
+        <input type="hidden" name="IdTeam" value="@ViewBag.MemberController_IdTeam">
+
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+
+}
