@@ -79,11 +79,12 @@
     }
 }
 
-@if (string.Compare(TempData["admin"].ToString(), "0") != 0){}
-<form class="d-inline-block float-end ps-3" method="post" action="/Members/Delete">
-    <input type="hidden" name="id" value="-1">
-    <input type="hidden" name="team_id" value="@Model.Id">
-    <button type="submit" class="btn btn-danger">Leave Team</button>
-</form>
+@if (string.Compare(TempData["admin"].ToString(), "0") != 0){
+    <form class="d-inline-block float-end ps-3" method="post" action="/Members/Delete">
+        <input type="hidden" name="id" value="-1">
+        <input type="hidden" name="team_id" value="@Model.Id">
+        <button type="submit" class="btn btn-danger">Leave Team</button>
+    </form>
+}
 
 
