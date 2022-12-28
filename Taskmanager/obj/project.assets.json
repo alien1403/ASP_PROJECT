@@ -10297,11 +10297,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hangh\\Source\\Repos\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
+      "projectUniqueName": "C:\\Users\\hangh\\Source\\Repos\\alien1403\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
       "projectName": "Taskmanager",
-      "projectPath": "C:\\Users\\hangh\\Source\\Repos\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
+      "projectPath": "C:\\Users\\hangh\\Source\\Repos\\alien1403\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
       "packagesPath": "C:\\Users\\hangh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hangh\\Source\\Repos\\ASP_PROJECT\\Taskmanager\\obj\\",
+      "outputPath": "C:\\Users\\hangh\\Source\\Repos\\alien1403\\ASP_PROJECT\\Taskmanager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
