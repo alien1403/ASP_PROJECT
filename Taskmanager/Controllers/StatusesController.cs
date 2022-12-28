@@ -49,7 +49,7 @@ namespace Taskmanager.Controllers
         {
             Console.WriteLine(status.StatusName);
             Console.WriteLine(ModelState.IsValid);
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 db.Statuses.Add(status);
                 db.SaveChanges();
