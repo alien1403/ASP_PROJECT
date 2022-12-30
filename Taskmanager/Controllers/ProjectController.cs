@@ -73,7 +73,15 @@ namespace Taskmanager.Controllers
            
             if (pr.Count() > 0)
             {
+                var tsk = from t in db.Tasks
+                          where t.IdProject == id
+                          select t;
                 
+                foreach(var task in tsk)
+                {
+                    db.Tasks.Remove(task);
+                }    
+
                 db.Projects.Remove(pr.First());
                 
                 db.SaveChanges();

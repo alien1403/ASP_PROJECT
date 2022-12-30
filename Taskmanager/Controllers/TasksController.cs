@@ -26,7 +26,7 @@ namespace Taskmanager.Controllers
             _roleManager = roleManager;
         }
 
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Index()
         {
             var tasks = db.Tasks.Include("Status").Include("User");
@@ -90,22 +90,23 @@ namespace Taskmanager.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
-        public IActionResult New(Models.Task task)
+        //[Authorize(Roles = "User,Editor,Admin")]
+        public IActionResult New(Models.Task task, int id)
         {
             task.StartDate = DateTime.Now;
             task.UserId = _userManager.GetUserId(User);
 
             if (ModelState.IsValid)
             {
+                task.IdProject = id;
                 db.Tasks.Add(task);
                 Debug.WriteLine("<------------------------------------------------>");
-                Debug.WriteLine($"{task.Id}");
+                Debug.WriteLine($"{id}");
                 Debug.WriteLine("<------------------------------------------------>");
                 task.Id = new int();
                 db.SaveChanges(); ;
                 TempData["message"] = "Task-ul a fost adaugat";
-                return RedirectToAction("Index");
+                return RedirectToAction("View","Project", new {id = id});
             }
             else
             {
@@ -149,7 +150,7 @@ namespace Taskmanager.Controllers
                     task.StatusId = requestTask.StatusId;
                     TempData["message"] = "Task-ul a fost modificat cu succes";
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("View", "Project", new {id = task.IdProject});
                 }
                 else
                 {
@@ -177,7 +178,7 @@ namespace Taskmanager.Controllers
                 db.Tasks.Remove(task);
                 db.SaveChanges();
                 TempData["message"] = "Task-ul a fost sters";
-                return RedirectToAction("Index");
+                return RedirectToAction("View", "Project", new { id = task.IdProject });
             }
             else
             {
