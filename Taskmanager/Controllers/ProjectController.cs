@@ -76,7 +76,7 @@ namespace Taskmanager.Controllers
                 var tsk = from t in db.Tasks
                           where t.IdProject == id
                           select t;
-                
+                    
                 foreach(var task in tsk)
                 {
                     db.Tasks.Remove(task);
