@@ -1,5 +1,4 @@
-﻿@model Taskmanager.Models.Task
-
+﻿@model dynamic
 @if(TempData["message"] != null){
     <div class="alert @TempData["messageType"]">
         @TempData["message"]
@@ -10,28 +9,46 @@
 
 <div class="card">
      <div class="card-body">
-        <h3 class="card-title alert-success py-3 px-3 rounded-2"> @Model.Title</h3>
+        <h3 class="card-title alert-info py-3 px-3 rounded-2"> @Model.task.Title</h3>
 
         <div class="card-text">
-            @Model.Description
+            @Model.task.Description
         </div>
 
         <div class="d-flex justify-content-between flex-row mt-5">
            @* <div><i class="bg-info bi-globe">@Model.Status.StatusName</i></div>*@
-            <div><i class="bg-info bi-person">@Model.User.UserName</i></div>
-            <span class="alert-success">@Model.StartDate</span>
-            <span class="alert-success">@Model.EndDate</span>
+            <div><i class="bg-info bi-person">@Model.task.User.UserName</i></div>
+            <span class="alert-success">@Model.task.StartDate</span>
+            <span class="alert-success">@Model.task.EndDate</span>
         </div>
+        <hr />
+        <div class="card-body">
+            <h3 class="card-title alert-info py-3 px-3 rounded-2">Assigned Members</h3>
+        </div>
+        <div class="card-text">
+            @foreach(var i in Model.Tm){
+                <div class=" d-inline-block   form-control ">
+                    <p>@i.Email</p>
+                    <form action="/Task_Members/Delete" method="post" class=" float-end ">
+                    <input type="hidden" name="m_id" value="@i.Id">
+                    <input type="hidden" name="t_id" value="@Model.task.Id">
+                    <button type="submit" class="btn btn-lg btn-danger">Remove</button></form>
+                </div>
+            }
+        </div>
+        <form method="get" action="/Task_Members/Add/@Model.task.Id">
+            <button type="submit" class="btn btn-primary btn-lg">Add Member</button>
+        </form>
      </div>
 
-     @if(ViewBag.AfisareButoane == true && @Model.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin){
+     @if(ViewBag.AfisareButoane == true && @Model.task.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin){
         <div class="d-flex flex-row justify-content-between p-3 border-1 border-top">
 
-            <a class="btn btn-success" href="/Tasks/Edit/@Model.Id">Editeaza task</a>
+            <a class="btn btn-success btn-lg" href="/Tasks/Edit/@Model.task.Id">Editeaza task</a>
 
-            <form method="post" action="/Tasks/Delete/@Model.Id">
+            <form method="post" action="/Tasks/Delete/@Model.task.Id">
 
-                <button class="btn btn-danger" type="submit">Sterge task</button>
+                <button class="btn btn-danger btn-lg" type="submit">Sterge task</button>
 
             </form>
 
@@ -41,7 +58,7 @@
 
 <br />
 <br />
-@foreach(var comm in Model.Comments){
+@foreach(var comm in Model.task.Comments){
     <div class="container">
         <div class="row">
             <div class="col-md-2">
@@ -96,11 +113,11 @@
 
             <div class="card">
 
-                <form method="post" action="/Tasks/Show/@Model.Id">
+                <form method="post" action="/Tasks/Show/@Model.task.Id">
 
                     <div class="card-body">
 
-                        <input type="hidden" name="TaskId" value="@Model.Id" />
+                        <input type="hidden" name="TaskId" value="@Model.task.Id" />
 
                         <label>Continut comentariu</label>
                         <br />
@@ -111,7 +128,7 @@
 
                         <br /><br />
 
-                        <button class="btn btn-success " type="submit">Adauga comentariul</button>
+                        <button class="btn btn-success btn-lg " type="submit">Adauga comentariul</button>
 
                     </div>
 

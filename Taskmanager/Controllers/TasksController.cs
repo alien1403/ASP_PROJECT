@@ -49,9 +49,26 @@ namespace Taskmanager.Controllers
                                 .Where(task => task.Id == id)
                                 .First();
 
-            SetAccessRights();
+            SetAccessRights(task);
 
-            return View(task);
+            var tmm = from tm in db.Task_Members
+                      where tm.IdTask == id
+                      select tm;
+
+            var Task_Member = from u in db.Users
+                              join t in tmm 
+                              on u.Id equals t.IdMember
+                              select u;
+
+            List<ApplicationUser> Tm= new();
+
+            foreach (var tm in Task_Member)
+            {
+                Tm.Add(tm);
+            }
+
+
+            return View(new {task, Tm});
         }
 
         [HttpPost]
@@ -74,7 +91,7 @@ namespace Taskmanager.Controllers
                                 .Include("Comments.User")
                                 .Where(task => task.Id == comment.TaskId)
                                 .First();
-                SetAccessRights();
+                SetAccessRights(task);
                 return View(task);
             }
         }
@@ -106,7 +123,7 @@ namespace Taskmanager.Controllers
                 task.Id = new int();
                 db.SaveChanges(); ;
                 TempData["message"] = "Task-ul a fost adaugat";
-                return RedirectToAction("View","Project", new {id = id});
+                return RedirectToAction("View", "Project", new { id = id });
             }
             else
             {
@@ -124,7 +141,7 @@ namespace Taskmanager.Controllers
 
             task.Stat = GetAllStats();
 
-            if(task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
+            if (task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
                 return View(task);
             }
@@ -143,14 +160,14 @@ namespace Taskmanager.Controllers
 
             if (ModelState.IsValid)
             {
-                if(task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
+                if (task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
                 {
                     task.Title = requestTask.Title;
                     task.Description = requestTask.Description;
                     task.StatusId = requestTask.StatusId;
                     TempData["message"] = "Task-ul a fost modificat cu succes";
                     db.SaveChanges();
-                    return RedirectToAction("View", "Project", new {id = task.IdProject});
+                    return RedirectToAction("View", "Project", new { id = task.IdProject });
                 }
                 else
                 {
@@ -173,7 +190,7 @@ namespace Taskmanager.Controllers
                                        .Where(tsk => tsk.Id == id)
                                        .First();
 
-            if(task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
+            if (task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
                 //var cmnt = from c in db.Comments
                 //           where c.TaskId == id
@@ -214,10 +231,15 @@ namespace Taskmanager.Controllers
             return selectList;
         }
 
-        private void SetAccessRights() {
+        private void SetAccessRights(Models.Task? id)
+        {
             ViewBag.AfisareButoane = false;
 
-            if (User.IsInRole("Admin"))
+            var t = db.Teams.Find(db.Projects.Find(id.IdProject).IdTeam);
+
+            Debug.WriteLine($"<-----{t.IdAdmin}---------{_userManager.GetUserId(User)}----------->");
+
+            if (User.IsInRole("Admin") || _userManager.GetUserId(User) == t.IdAdmin)
             {
                 ViewBag.AfisareButoane = true;
             }

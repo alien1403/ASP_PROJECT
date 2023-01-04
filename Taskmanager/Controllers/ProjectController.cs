@@ -8,7 +8,7 @@ using Taskmanager.Models;
 
 namespace Taskmanager.Controllers
 {
-   
+
     public class ProjectController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -32,19 +32,19 @@ namespace Taskmanager.Controllers
         [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Add(Projects p)
         {
-            if(p.IdTeam == null || p.Name == null || p.Description == null)
+            if (p.IdTeam == null || p.Name == null || p.Description == null)
             {
                 TempData["msg"] = "Aw snap! There was an input error";
                 return RedirectToAction("Add", "Project", new { id = p.IdTeam });
             }
 
             p.IdAdmin = userManager.GetUserId(User);
-            
-           
+
+
 
             db.Projects.Add(p);
             db.SaveChanges();
-            return RedirectToAction("View", "Team", new {id = p.IdTeam});
+            return RedirectToAction("View", "Team", new { id = p.IdTeam });
         }
 
         [Authorize(Roles = "User,Editor,Admin")]
@@ -59,26 +59,27 @@ namespace Taskmanager.Controllers
                         select t;
             ViewBag.Tasks = tasks;
 
-         TempData["admin"] = String.Compare(h.First().IdAdmin, userManager.GetUserId(User)).ToString();
+            TempData["admin"] = String.Compare(h.First().IdAdmin, userManager.GetUserId(User)).ToString();
+
 
             return View(h.First());
         }
         [HttpPost]
         [Authorize(Roles = "User,Editor,Admin")]
-        public IActionResult Delete(int id,int team_id)
+        public IActionResult Delete(int id, int team_id)
         {
             var pr = from h in db.Projects
                      where h.Id == id
                      select h;
-           
+
             if (pr.Count() > 0)
             {
-               
+
                 //var tsk = from t in db.Tasks
                 //          where t.IdProject == id
                 //          select t;
 
-                    
+
                 //foreach(var task in tsk)
                 //{
                 //    var cmnt = from c in db.Comments
@@ -93,14 +94,14 @@ namespace Taskmanager.Controllers
                 //}    
 
                 db.Projects.Remove(pr.First());
-                
+
                 db.SaveChanges();
             }
             Debug.WriteLine("<------------------------------------------------>");
             Debug.WriteLine($"{team_id}");
             Debug.WriteLine("<------------------------------------------------>");
 
-            return RedirectToAction("View", "Team", new { id = team_id }); 
+            return RedirectToAction("View", "Team", new { id = team_id });
         }
 
         [Authorize(Roles = "User,Editor,Admin")]
@@ -135,7 +136,7 @@ namespace Taskmanager.Controllers
             }
 
             if (pr != null)
-            {   
+            {
                 pr.Name = p.Name;
                 pr.Description = p.Description;
 

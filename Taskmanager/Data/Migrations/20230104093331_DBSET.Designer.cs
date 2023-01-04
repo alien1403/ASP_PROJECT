@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Taskmanager.Data;
 
@@ -11,9 +12,10 @@ using Taskmanager.Data;
 namespace Taskmanager.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230104093331_DBSET")]
+    partial class DBSET
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -359,6 +361,12 @@ namespace Taskmanager.Data.Migrations
                     b.Property<int?>("StatusId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Task_MemberIdMember")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("Task_MemberIdTask")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -374,6 +382,8 @@ namespace Taskmanager.Data.Migrations
                     b.HasIndex("StatusId");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("Task_MemberIdMember", "Task_MemberIdTask");
 
                     b.ToTable("Tasks");
                 });
@@ -410,24 +420,6 @@ namespace Taskmanager.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
-                });
-
-            modelBuilder.Entity("TaskTask_Member", b =>
-                {
-                    b.Property<int>("TasksId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TaskMembersIdMember")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("TaskMembersIdTask")
-                        .HasColumnType("int");
-
-                    b.HasKey("TasksId", "TaskMembersIdMember", "TaskMembersIdTask");
-
-                    b.HasIndex("TaskMembersIdMember", "TaskMembersIdTask");
-
-                    b.ToTable("TaskTask_Member");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -540,26 +532,15 @@ namespace Taskmanager.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.HasOne("Taskmanager.Models.Task_Member", null)
+                        .WithMany("Tasks")
+                        .HasForeignKey("Task_MemberIdMember", "Task_MemberIdTask");
+
                     b.Navigation("Project");
 
                     b.Navigation("Status");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("TaskTask_Member", b =>
-                {
-                    b.HasOne("Taskmanager.Models.Task", null)
-                        .WithMany()
-                        .HasForeignKey("TasksId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Taskmanager.Models.Task_Member", null)
-                        .WithMany()
-                        .HasForeignKey("TaskMembersIdMember", "TaskMembersIdTask")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Taskmanager.Models.ApplicationUser", b =>
@@ -587,6 +568,8 @@ namespace Taskmanager.Data.Migrations
             modelBuilder.Entity("Taskmanager.Models.Task_Member", b =>
                 {
                     b.Navigation("Members");
+
+                    b.Navigation("Tasks");
                 });
 
             modelBuilder.Entity("Taskmanager.Models.Team", b =>

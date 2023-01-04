@@ -36,8 +36,10 @@ namespace Taskmanager.Models
         public virtual Projects? Project { get; set; }
 
         public virtual ICollection<Comment>? Comments { get; set; }
+        public virtual ICollection<Models.Task_Member>? TaskMembers { get; set; }
         [NotMapped]
         public IEnumerable<SelectListItem>? Stat { get; set; }
+       
 
     }
 }

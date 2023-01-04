@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Taskmanager"
+    "\\Taskmanager",
+    "\\Taskmanager\\Controllers"
   ],
   "SelectedNode": "\\Taskmanager.sln",
   "PreviewInSolutionExplorer": false
