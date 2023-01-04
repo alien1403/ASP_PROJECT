@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 using Taskmanager.Models;
 
 namespace Taskmanager.Data
@@ -15,6 +16,12 @@ namespace Taskmanager.Data
             base.OnModelCreating(builder);
             builder.Entity<Member>()
                 .HasKey(x => new {x.IdMember, x.IdTeam});
+
+            builder.Entity<Models.Task>().HasMany(t => t.Comments).WithOne(c => c.Task).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Models.Projects>().HasMany(t => t.Tasks).WithOne(p => p.Project).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Models.Team>().HasMany(p => p.Projects).WithOne(t => t.Team).OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(builder);
         }
 
         public DbSet<ApplicationUser> Users { get; set; }  

@@ -175,6 +175,14 @@ namespace Taskmanager.Controllers
 
             if(task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
+                //var cmnt = from c in db.Comments
+                //           where c.TaskId == id
+                //           select c;
+                //foreach(var cc in cmnt)
+                //{
+                //    db.Comments.Remove(cc);
+                //}
+
                 db.Tasks.Remove(task);
                 db.SaveChanges();
                 TempData["message"] = "Task-ul a fost sters";

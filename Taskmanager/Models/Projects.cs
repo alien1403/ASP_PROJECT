@@ -15,8 +15,8 @@ namespace Taskmanager.Models
         public int IdTeam { get; set; }
 
         [Required(ErrorMessage = "The Project name is required")]
-        [MaxLength(50,ErrorMessage = "Project name is too long")]
-        [MinLength(5,ErrorMessage ="Project name is too short")]
+        [MaxLength(50, ErrorMessage = "Project name is too long")]
+        [MinLength(5, ErrorMessage = "Project name is too short")]
         public string? Name { get; set; }
 
         [Required(ErrorMessage = "The description is required")]
@@ -26,6 +26,6 @@ namespace Taskmanager.Models
 
         public virtual ApplicationUser? User { get; set; }
         public virtual Team? Team { get; set; }
-        
+        public virtual ICollection<Models.Task>? Tasks { get; set; }
     }
 }

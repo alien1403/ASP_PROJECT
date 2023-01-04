@@ -197,6 +197,16 @@ namespace Taskmanager.Controllers
 
             if (t.Id != null && userManager.GetUserId(User) == t.IdAdmin)
             {
+                //var p = from pr in db.Projects
+                //        where pr.IdTeam == t.Id
+                //        select pr;
+
+                //foreach(var prr in p)
+                //{
+                //    db.Projects.Remove(prr);
+                //}
+
+
                 db.Teams.Remove(t);
                 db.SaveChanges();
             }

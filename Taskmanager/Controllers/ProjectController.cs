@@ -73,14 +73,24 @@ namespace Taskmanager.Controllers
            
             if (pr.Count() > 0)
             {
-                var tsk = from t in db.Tasks
-                          where t.IdProject == id
-                          select t;
+               
+                //var tsk = from t in db.Tasks
+                //          where t.IdProject == id
+                //          select t;
+
                     
-                foreach(var task in tsk)
-                {
-                    db.Tasks.Remove(task);
-                }    
+                //foreach(var task in tsk)
+                //{
+                //    var cmnt = from c in db.Comments
+                //               where c.TaskId == task.Id
+                //               select c;
+                //    foreach(var cc in cmnt)
+                //    {
+                //        db.Comments.Remove(cc);
+                //    }
+
+                //    db.Tasks.Remove(task);
+                //}    
 
                 db.Projects.Remove(pr.First());
                 

@@ -18,6 +18,7 @@ namespace Taskmanager.Models
         public string? Name { get; set; }
 
         public virtual IEnumerable<Member>? Members { get; set; }
+        public virtual ICollection<Models.Projects>? Projects { get; set; }
        
     }
 }
