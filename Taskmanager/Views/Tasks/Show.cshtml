@@ -32,16 +32,16 @@
                     @foreach (var i in Model.Tm)
                     {
                         <div class="row">
-                            <div class="col-md 4">
+                            <div class="col-md-4">
                             <p>@i.Email</p>
                                     
                             </div>
-                            <div class="col-md 4">
+                        <div class="col-md-4">
 
                                     
-                            </div>
+                           </div>
 
-                            <div class="col-md 4">
+                        <div class="col-md-4">
                                 <form action="/Task_Members/Delete" method="post" class=" float-end ">
                                 <input type="hidden" name="m_id" value="@i.Id">
                                 <input type="hidden" name="t_id" value="@Model.task.Id">
@@ -84,6 +84,8 @@
 
 <br />
 <br />
+
+<div style="overflow-y: scroll; max-height: 30vh;">
 @foreach(var comm in Model.task.Comments){
     <div class="container">
         <div class="row">
@@ -128,6 +130,7 @@
         </div>
     </div>
 }
+</div>
 
 <div class="container">
 

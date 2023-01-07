@@ -5,10 +5,11 @@
             <div class="card border-primary mb-3" style="max-width: 20rem;">
                 <div class="card-body">
                     <h5 class="card-title">User Information</h5>
-                    <p class="card-text">Name: @User.Identity.Name</p>
+                    <p class="card-text">Email: @User.Identity.Name</p>
                 </div>
                 <hr/>
                 <h5>Manages Teams</h5>
+                <div style="overflow-y: scroll; height: 10vh;">
                 <ul>
                     @foreach(var i in ViewBag.Teams_C)
                     {
@@ -23,8 +24,10 @@
                     <button type="button" class="btn btn-success " onclick="window.location='/Team/Create'">Add a team</button>
 
                 </ul>
+                </div>
                 <hr />
                 <h5>Participating in  Teams</h5>
+                <div style="overflow-y: scroll; height: 10vh;">
                 <ul>
                     @foreach(var i in ViewBag.Teams_P)
                     {
@@ -38,7 +41,7 @@
                     }
             
                 </ul>
-
+                </div>
 
             </div>
 
@@ -59,7 +62,10 @@
                                         </button>
                                 
                                      </h4>
+                                     <h5>Description</h5>
                                     <p class="card-text">@i.Description</p>
+                                    <h5 class="mt-1">Tasks</h5>
+
                                 </div>
                             </div>
                         </div>

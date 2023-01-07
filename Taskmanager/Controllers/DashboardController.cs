@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using Taskmanager.Data;
 using Taskmanager.Models;
 
@@ -22,7 +23,7 @@ namespace Taskmanager.Controllers
             userManager = uM;
             roleManager = rM;
         }
-        [Authorize(Roles ="User,Editor,Admin")]
+        [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Index()
         {
             var id_user = userManager.GetUserId(User);
@@ -44,8 +45,7 @@ namespace Taskmanager.Controllers
                           select p;
             ViewBag.Teams_C = teams_c;
             ViewBag.Teams_P = teams_p;
-            ViewBag.Project_P = project;
-
+            ViewBag.Project_P = project;      
             return View();
         }
     }
