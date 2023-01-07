@@ -3,15 +3,15 @@
 
 @using (Html.BeginForm("Edit","Team",FormMethod.Post)){
     @Html.AntiForgeryToken()
-    <div class="form-control">
-    @Html.LabelFor(Model=>Model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
-    <br />
-    <div class="col-md-10">
-    @Html.EditorFor(Model=>Model.Name, new{ htmlAttributes= new{@class = "form-control"}})
-    @Html.ValidationMessageFor(Model=>Model.Name,"",new{ @class = "text-danger"})
-    </div>
-    <br>
-    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    <div class="form-group">
+        @Html.LabelFor(Model=>Model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
+        <br />
+        <div class="col-md-10">
+            @Html.EditorFor(Model=>Model.Name, new{ htmlAttributes= new{@class = "form-control"}})
+            @Html.ValidationMessageFor(Model=>Model.Name,"",new{ @class = "text-danger"})
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success btn-lg">Submit</button>
     </div>
 
 

@@ -1,10 +1,10 @@
 ﻿@model Taskmanager.Models.Projects
 
-<h1>Edit Project</h1>
+<h3>Edit Project</h3>
 @using (Html.BeginForm("Edit","Project", FormMethod.Post)){
     @Html.AntiForgeryToken()
 
-    <div class="form-control">
+    <div class="form-check">
         @Html.LabelFor(Model=>Model.Name,"Name:",htmlAttributes: new {@class = "col-md-2 label-control"})
         <br>
         @Html.EditorFor(Model=>Model.Name,"",new{ htmlAttributes = new{ @class = "form-control"}})
@@ -15,7 +15,7 @@
         @Html.EditorFor(Model=>Model.Description,"",new{htmlAttributes=new{@class = "form-control"}})
         @Html.ValidationMessageFor(Model=>Model.Description,null, new{@class = "text-danger"})
         <br>
-        <button class="btn btn-primary btn-lg">Submit</button>
+        <button class="btn btn-success btn-lg">Submit</button>
 
     </div>
 

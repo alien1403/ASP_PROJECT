@@ -17,7 +17,7 @@ namespace Taskmanager.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.10")
+                .HasAnnotation("ProductVersion", "6.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -344,8 +344,7 @@ namespace Taskmanager.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");

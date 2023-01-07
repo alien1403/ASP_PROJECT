@@ -9,7 +9,8 @@
 
 <div class="card">
      <div class="card-body">
-        <h3 class="card-title alert-info py-3 px-3 rounded-2"> @Model.task.Title</h3>
+
+        <h5 class="card-title alert-info py-3 px-3 rounded-2"> @Model.task.Title</h5>
 
         <div class="card-text">
             @Model.task.Description
@@ -17,29 +18,54 @@
 
         <div class="d-flex justify-content-between flex-row mt-5">
            @* <div><i class="bg-info bi-globe">@Model.Status.StatusName</i></div>*@
-            <div><i class="bg-info bi-person">@Model.task.User.UserName</i></div>
-            <span class="alert-success">@Model.task.StartDate</span>
-            <span class="alert-success">@Model.task.EndDate</span>
+            <div><i class="bi-person">@Model.task.User.UserName</i></div>
+            <span >@Model.task.StartDate</span>
+            <span >@Model.task.EndDate</span>
         </div>
+    </div>
         <hr />
         <div class="card-body">
-            <h3 class="card-title alert-info py-3 px-3 rounded-2">Assigned Members</h3>
-        </div>
-        <div class="card-text">
-            @foreach(var i in Model.Tm){
-                <div class=" d-inline-block   form-control ">
-                    <p>@i.Email</p>
-                    <form action="/Task_Members/Delete" method="post" class=" float-end ">
-                    <input type="hidden" name="m_id" value="@i.Id">
-                    <input type="hidden" name="t_id" value="@Model.task.Id">
-                    <button type="submit" class="btn btn-lg btn-danger">Remove</button></form>
+            <h5 class="card-title alert-info py-3 px-3 rounded-2">Assigned Members</h5>
+        
+            <div class="card-text">
+                <div class="container">
+                    @foreach (var i in Model.Tm)
+                    {
+                        <div class="row">
+                            <div class="col-md 4">
+                            <p>@i.Email</p>
+                                    
+                            </div>
+                            <div class="col-md 4">
+
+                                    
+                            </div>
+
+                            <div class="col-md 4">
+                                <form action="/Task_Members/Delete" method="post" class=" float-end ">
+                                <input type="hidden" name="m_id" value="@i.Id">
+                                <input type="hidden" name="t_id" value="@Model.task.Id">
+                                <button type="submit" class="btn btn-lg btn-danger">Remove</button></form>
+                            </div>
+                        </div>
+
+                        /*
+                        <div class=" d-flex form-control mt-3 ">
+                        <p>@i.Email</p>
+                        <form action="/Task_Members/Delete" method="post" class=" float-end ">
+                        <input type="hidden" name="m_id" value="@i.Id">
+                        <input type="hidden" name="t_id" value="@Model.task.Id">
+                        <button type="submit" class="btn btn-lg btn-danger">Remove</button></form>
+                        </div>
+                        */
+                    }
                 </div>
-            }
+            </div>
+            <form method="get" action="/Task_Members/Add/@Model.task.Id">
+                <button type="submit" class="btn btn-primary btn-lg mb-3 mt-3">Add Member</button>
+            </form>
         </div>
-        <form method="get" action="/Task_Members/Add/@Model.task.Id">
-            <button type="submit" class="btn btn-primary btn-lg">Add Member</button>
-        </form>
-     </div>
+     
 
      @if(ViewBag.AfisareButoane == true && @Model.task.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin){
         <div class="d-flex flex-row justify-content-between p-3 border-1 border-top">

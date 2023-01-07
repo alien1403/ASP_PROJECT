@@ -6,7 +6,7 @@
 
             @using(Html.BeginForm(actionName: "New", controllerName: "Tasks", method: FormMethod.Post))
             {
-                <div class="container mt-5 form-control">
+                <div class="container mt-5 form-check">
    
                 @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
@@ -31,6 +31,7 @@
                 @Html.EditorFor(m => m.EndDate, new {@type = "date"})
 
                 <br />
+                <br />
 
                 <label>Selectati statusul</label>
                 @Html.DropDownListFor(m => m.StatusId, new SelectList(Model.Stat, "Value", "Text"),
@@ -39,7 +40,6 @@
                 @Html.ValidationMessageFor(m => m.StatusId, null, new { @class = "text-danger" })
                 <br />
                 <input type="hidden" name="id" value = "@Model.IdProject">
-                <br />
 
                 <button class="btn btn-success" type="submit">Adauga task</button>
     </div>

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cristian\\Desktop\\Taskmanager\\Taskmanager\\Taskmanager.csproj": {}
+    "C:\\Users\\hangh\\OneDrive\\Desktop\\GITASP\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cristian\\Desktop\\Taskmanager\\Taskmanager\\Taskmanager.csproj": {
+    "C:\\Users\\hangh\\OneDrive\\Desktop\\GITASP\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cristian\\Desktop\\Taskmanager\\Taskmanager\\Taskmanager.csproj",
+        "projectUniqueName": "C:\\Users\\hangh\\OneDrive\\Desktop\\GITASP\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
         "projectName": "Taskmanager",
-        "projectPath": "C:\\Users\\Cristian\\Desktop\\Taskmanager\\Taskmanager\\Taskmanager.csproj",
-        "packagesPath": "C:\\Users\\Cristian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cristian\\Desktop\\Taskmanager\\Taskmanager\\obj\\",
+        "projectPath": "C:\\Users\\hangh\\OneDrive\\Desktop\\GITASP\\ASP_PROJECT\\Taskmanager\\Taskmanager.csproj",
+        "packagesPath": "C:\\Users\\hangh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hangh\\OneDrive\\Desktop\\GITASP\\ASP_PROJECT\\Taskmanager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cristian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hangh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,23 +50,25 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.11, )"
             }
           },
           "imports": [
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

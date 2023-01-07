@@ -7,7 +7,9 @@
 <ul>
     @foreach (var i in ViewBag.Members_P)
     {  <div class="w-100 p-3">
-        <li class="d-inline-block">@i.UserName -  (@i.Email) </li>
+        <li class="d-inline-block">
+                    @i.UserName -  (@i.Email)
+        </li>
 
             @{
                 if (string.Compare(TempData["admin"].ToString(), "0") == 0)
@@ -32,7 +34,7 @@
     @{
         if (string.Compare(TempData["admin"].ToString(), "0") == 0)
         {
-                <button type="button" class="btn btn-primary btn-sm" onclick="window.location='/Members/Add/@Model.Id'">Add a member</button>
+            <button type="button" class="btn btn-success btn-sm" onclick="window.location='/Members/Add/@Model.Id'">Add a member</button>
         }
     }
 
@@ -46,12 +48,17 @@
 
     @foreach(var i in ViewBag.Projects)
     {
-        <li onclick="window.location='/Project/View/@i.Id'">@i.Name</li>
+        <li onclick="window.location='/Project/View/@i.Id'" style="list-style: none;">
+            <button type="button" class="btn btn-primary btn-sm mb-3">
+                @i.Name
+            </button>
+            
+        </li>
     }
     @{
         if (string.Compare(TempData["admin"].ToString(), "0") == 0)
         {
-                <button type="button" class="btn btn-primary btn-sm" onclick="window.location='/Project/Add/@Model.Id'">Add a project</button>
+            <button type="button" class="btn btn-success btn-sm" onclick="window.location='/Project/Add/@Model.Id'">Add a project</button>
         }
     }
    

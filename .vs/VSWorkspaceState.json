@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Taskmanager",
-    "\\Taskmanager\\Controllers"
+    "\\Taskmanager\\Controllers",
+    "\\Taskmanager\\wwwroot",
+    "\\Taskmanager\\wwwroot\\css"
   ],
-  "SelectedNode": "\\Taskmanager.sln",
+  "SelectedNode": "\\Taskmanager\\wwwroot\\css\\bootstrap.css",
   "PreviewInSolutionExplorer": false
 }

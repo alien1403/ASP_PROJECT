@@ -18,7 +18,7 @@ namespace Taskmanager.Models
         public string? Title { get; set; }
 
         [MinLength(5, ErrorMessage = "Description is too short.(min 5)")]
-        [MaxLength(100, ErrorMessage = "Decription is too long.(max 50)")]
+
 
         [Required(ErrorMessage = "The Description is required")]
         public string? Description { get; set; }

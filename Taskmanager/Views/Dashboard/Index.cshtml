@@ -2,38 +2,69 @@
 <div class="row h-100">
     <div class="col-md-3 overflow-auto min-vh-100">
         <div class="row">
-            <div class="col-md-12">
-                <h3>User Information</h3>
-                <p>Name: @User.Identity.Name</p>
-            </div>
-        </div>
-        <hr />
-        <h3>Manages Teams</h3>
-        <ul>
-            @foreach(var i in ViewBag.Teams_C)
-            {
-                <li onclick="window.location='/Team/View/@i.Id'">@i.Name</li>
-            }
-            <button type="button" class="btn btn-primary btn-sm" onclick="window.location='/Team/Create'">Add a team</button>
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">User Information</h5>
+                    <p class="card-text">Name: @User.Identity.Name</p>
+                </div>
+                <hr/>
+                <h5>Manages Teams</h5>
+                <ul>
+                    @foreach(var i in ViewBag.Teams_C)
+                    {
+                       
+                            <li onclick="window.location='/Team/View/@i.Id'" style="list-style: none">
+                                <button type="button" class="btn btn-primary mb-3">
+                                    @i.Name
+                                </button>
+                            </li>
 
-        </ul>
-        <hr />
-        <h3>Participating in  Teams</h3>
-        <ul>
-            @foreach(var i in ViewBag.Teams_P)
-            {
-                <li onclick="window.location='/Team/View/@i.Id'">@i.Name</li>
-            }
+                    }
+                    <button type="button" class="btn btn-success " onclick="window.location='/Team/Create'">Add a team</button>
+
+                </ul>
+                <hr />
+                <h5>Participating in  Teams</h5>
+                <ul>
+                    @foreach(var i in ViewBag.Teams_P)
+                    {
+                        
+                            <li onclick="window.location='/Team/View/@i.Id'" style="list-style: none">
+                                <button type="button" class="btn btn-primary mb-3">
+                                    @i.Name
+                                </button>
+                            </li>
+                        
+                    }
             
-        </ul>
+                </ul>
+
+
+            </div>
+
+        </div>
+        
     </div>
     <div class="col-md-9 overflow-auto border-start border-dark min-vh-100">
         <h3>Projects you are in</h3>
-        <ul>
-            @foreach(var i in ViewBag.Project_P)
-            {
-                <li onclick ="window.location='/Project/View/@i.Id'">@i.Name</li>
-            }
-        </ul>
+        <div class="wrapper">
+                    @foreach(var i in ViewBag.Project_P)
+                    {
+                        <div class="m-2">
+                            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <button type="button" class="btn btn-primary">
+                                            <li onclick="window.location='/Project/View/@i.Id'" style="list-style: none;">@i.Name</li>
+                                        </button>
+                                
+                                     </h4>
+                                    <p class="card-text">@i.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+        </div>
     </div>
 </div>
