@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Diagnostics;
 using Taskmanager.Data;
 using Taskmanager.Models;
@@ -43,10 +44,27 @@ namespace Taskmanager.Controllers
                           join p in db.Projects
                           on m.IdTeam equals p.IdTeam
                           select p;
+
+            var tasks = from tsk in db.Tasks
+                        join tm in (from tmm in db.Task_Members
+                                    where tmm.IdMember == id_user
+                                    select tmm)
+                        on tsk.Id equals tm.IdTask
+                        select tsk;
+
+            ViewBag.Tasks = tasks;
             ViewBag.Teams_C = teams_c;
             ViewBag.Teams_P = teams_p;
             ViewBag.Project_P = project;      
             return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public IActionResult dotnetMyAdmin()
+        {
+            List<Models.Team> teams = (from tm in db.Teams
+                                      select tm).ToList<Models.Team>();
+
+            return View(teams);
         }
     }
 }

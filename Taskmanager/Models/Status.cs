@@ -5,7 +5,7 @@ namespace Taskmanager.Models
     public class Status
     {
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Required(ErrorMessage = "The StatusName is required")]
         public string? StatusName { get; set; }
 

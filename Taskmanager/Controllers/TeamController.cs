@@ -9,6 +9,7 @@ using System.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.Security.Application;
 
 namespace Taskmanager.Controllers
 {
@@ -64,7 +65,7 @@ namespace Taskmanager.Controllers
 
                 return RedirectToAction("Create", "Team");
             }
-            t.Name = HttpUtility.HtmlEncode(t.Name);
+            t.Name = AntiXss.HtmlEncode(t.Name);
 
             t.IdAdmin = userManager.GetUserId(User);
              
@@ -183,7 +184,7 @@ namespace Taskmanager.Controllers
 
             if (team  != null )
             {
-                team.Name = HttpUtility.HtmlEncode(t.Name);
+                team.Name = AntiXss.HtmlEncode(t.Name);
                 db.SaveChanges();
             }
 

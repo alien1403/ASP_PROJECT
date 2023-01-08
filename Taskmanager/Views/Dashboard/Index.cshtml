@@ -50,7 +50,7 @@
     </div>
     <div class="col-md-9 overflow-auto border-start border-dark min-vh-100">
         <h3>Projects you are in</h3>
-        <div class="wrapper">
+        <div class="wrapper" style="min-height: 5rem;">
                     @foreach(var i in ViewBag.Project_P)
                     {
                         <div class="m-2">
@@ -72,5 +72,31 @@
                     }
 
         </div>
+
+        <hr />
+        <div class="col-md-9 overflow-auto border-start border-dark min-vh-100">
+            <h3>Tasks you are in</h3>
+            <div class="wrapper"" style="min-height: 5rem">
+                @foreach (var i in ViewBag.Tasks)
+                {
+                    <div class="m-2">
+                        <div class="card border-primary mb-3" style="max-width: 20rem;">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <button type="button" class="btn btn-primary">
+                                        <li onclick="window.location='/Tasks/Show/@i.Id'" style="list-style: none;">@i.Title</li>
+                                    </button>
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
     </div>
+
+
+    
 </div>

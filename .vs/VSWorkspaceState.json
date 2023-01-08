@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Taskmanager",
-    "\\Taskmanager\\Controllers",
-    "\\Taskmanager\\Views",
-    "\\Taskmanager\\Views\\Dashboard",
-    "\\Taskmanager\\wwwroot",
-    "\\Taskmanager\\wwwroot\\css"
+    ""
   ],
-  "SelectedNode": "\\Taskmanager\\Views\\Dashboard\\Index.cshtml",
+  "SelectedNode": "\\Taskmanager.sln",
   "PreviewInSolutionExplorer": false
 }

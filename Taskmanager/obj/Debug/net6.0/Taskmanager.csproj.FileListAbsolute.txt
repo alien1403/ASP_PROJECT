@@ -1930,3 +1930,6 @@ C:\Users\hangh\OneDrive\Desktop\GITASP\ASP_PROJECT\Taskmanager\obj\Debug\net6.0\
 C:\Users\hangh\OneDrive\Desktop\GITASP\ASP_PROJECT\Taskmanager\obj\Debug\net6.0\Taskmanager.genruntimeconfig.cache
 C:\Users\hangh\OneDrive\Desktop\GITASP\ASP_PROJECT\Taskmanager\obj\Debug\net6.0\ref\Taskmanager.dll
 C:\Users\hangh\OneDrive\Desktop\GITASP\ASP_PROJECT\Taskmanager\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\Cristian\Desktop\Taskmanager\Taskmanager\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\Cristian\Desktop\Taskmanager\Taskmanager\bin\Debug\net6.0\AntiXssLibrary.dll
+C:\Users\Cristian\Desktop\Taskmanager\Taskmanager\bin\Debug\net6.0\HtmlSanitizationLibrary.dll

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Security.Application;
 using System.Data;
 using System.Diagnostics;
 using Taskmanager.Data;
@@ -40,7 +41,8 @@ namespace Taskmanager.Controllers
 
             p.IdAdmin = userManager.GetUserId(User);
 
-
+            p.Description = AntiXss.HtmlEncode(p.Description);
+            p.Name = AntiXss.HtmlEncode(p.Name);
 
             db.Projects.Add(p);
             db.SaveChanges();
@@ -137,8 +139,8 @@ namespace Taskmanager.Controllers
 
             if (pr != null)
             {
-                pr.Name = p.Name;
-                pr.Description = p.Description;
+                pr.Name = AntiXss.HtmlEncode(p.Name);
+                pr.Description = AntiXss.HtmlEncode(p.Description);
 
                 db.SaveChanges();
                 return RedirectToAction("View", "Team", new { id = pr.IdTeam });

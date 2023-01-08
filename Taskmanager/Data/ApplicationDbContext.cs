@@ -22,8 +22,6 @@ namespace Taskmanager.Data
                 .HasKey(x => new { x.IdMember, x.IdTask });
 
             builder.Entity<Models.Task>().HasMany(t => t.Comments).WithOne(c => c.Task).OnDelete(DeleteBehavior.Cascade);
-            
-
             builder.Entity<Models.Projects>().HasMany(t => t.Tasks).WithOne(p => p.Project).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<Models.Team>().HasMany(p => p.Projects).WithOne(t => t.Team).OnDelete(DeleteBehavior.Cascade);
 

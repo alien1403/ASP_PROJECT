@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore;
+using Microsoft.Security.Application;
 using Taskmanager.Data;
 using Taskmanager.Models;
 
@@ -45,6 +45,7 @@ namespace Taskmanager.Controllers
         public IActionResult Edit(int id)
         {
             Comment comm = db.Comments.Find(id);
+     
             if(comm.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
                 return View(comm);
@@ -65,7 +66,7 @@ namespace Taskmanager.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    comm.Content = requestComment.Content;
+                    comm.Content = AntiXss.HtmlEncode(requestComment.Content);
                     db.SaveChanges();
                     return Redirect("/Tasks/Show/" + comm.TaskId);
                 }

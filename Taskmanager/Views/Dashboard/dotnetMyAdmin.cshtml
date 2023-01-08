@@ -1,0 +1,23 @@
+﻿@model List<Taskmanager.Models.Team>
+<div class="col-md-9 overflow-auto border-start border-dark min-vh-100">
+    <h3>Teams</h3>
+    <div class="wrapper">
+        @foreach (var i in Model)
+        {
+            <div class="m-2">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <button type="button" class="btn btn-primary">
+                                <li onclick="window.location='/Team/View/@i.Id'" style="list-style: none;">@i.Name</li>
+                            </button>
+                        </h4>
+                        
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

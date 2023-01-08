@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Security.Application;
 using Taskmanager.Data;
 using Taskmanager.Models;
 
@@ -51,6 +52,7 @@ namespace Taskmanager.Controllers
             Console.WriteLine(ModelState.IsValid);
             if (ModelState.IsValid)
             {
+                status.StatusName = AntiXss.HtmlEncode(status.StatusName);
                 db.Statuses.Add(status);
                 db.SaveChanges();
                 TempData["message"] = "Statusul a fost adaugat";
@@ -76,7 +78,7 @@ namespace Taskmanager.Controllers
             Console.WriteLine(newStatus.StatusName);
             if (!ModelState.IsValid)
             {
-                newStatus.StatusName = status.StatusName; ;
+                newStatus.StatusName = AntiXss.HtmlEncode(status.StatusName);
                 db.SaveChanges();
                 TempData["message"] = "Statusul a fost modificat";
                 return RedirectToAction("Index");

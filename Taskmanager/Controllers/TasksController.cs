@@ -9,6 +9,7 @@ using System.Web;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
 using System.Data;
+using Microsoft.Security.Application;
 
 namespace Taskmanager.Controllers
 {
@@ -116,6 +117,9 @@ namespace Taskmanager.Controllers
             if (ModelState.IsValid)
             {
                 task.IdProject = id;
+                task.Description = AntiXss.HtmlEncode(task.Description);
+                task.Title = AntiXss.HtmlEncode(task.Title);
+
                 db.Tasks.Add(task);
                 Debug.WriteLine("<------------------------------------------------>");
                 Debug.WriteLine($"{id}");
@@ -162,8 +166,8 @@ namespace Taskmanager.Controllers
             {
                 if (task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
                 {
-                    task.Title = requestTask.Title;
-                    task.Description = requestTask.Description;
+                    task.Title = AntiXss.HtmlEncode(requestTask.Title);
+                    task.Description = AntiXss.HtmlEncode(requestTask.Description);
                     task.StatusId = requestTask.StatusId;
                     TempData["message"] = "Task-ul a fost modificat cu succes";
                     db.SaveChanges();
@@ -192,13 +196,16 @@ namespace Taskmanager.Controllers
 
             if (task.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
-                //var cmnt = from c in db.Comments
-                //           where c.TaskId == id
-                //           select c;
-                //foreach(var cc in cmnt)
-                //{
-                //    db.Comments.Remove(cc);
-                //}
+              
+
+                var TM = from tm in db.Task_Members
+                         where tm.IdTask == id
+                         select tm;
+                foreach(var tm in TM)
+                {
+                    db.Task_Members.Remove(tm);
+                    
+                }
 
                 db.Tasks.Remove(task);
                 db.SaveChanges();
