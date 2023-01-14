@@ -5,160 +5,161 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Taskmanager
 build_property.RootNamespace = Taskmanager
-build_property.ProjectDir = C:\Users\Cristian\Desktop\Taskmanager\Taskmanager\
+build_property.ProjectDir = C:\Users\hangh\OneDrive\Desktop\FinalProjectASP\ASP_PROJECT\Taskmanager\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Cristian\Desktop\Taskmanager\Taskmanager
+build_property.MSBuildProjectDirectory = C:\Users\hangh\OneDrive\Desktop\FinalProjectASP\ASP_PROJECT\Taskmanager
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Comments/Edit.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Comments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Dashboard/dotnetMyAdmin.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Dashboard/dotnetMyAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGRvdG5ldE15QWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Dashboard/Index.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Home/Index.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Home/Privacy.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Members/Add.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Members/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Project/Add.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Project/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Project/Edit.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Project/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Project/View.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Project/View.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Shared/Error.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Statuses/Edit.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Statuses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Statuses/Index.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Statuses/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Statuses/New.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Statuses/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Statuses/Show.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Statuses/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHVzZXNcU2hvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Tasks/Edit.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Tasks/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Tasks/Index.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Tasks/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Tasks/New.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Tasks/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NcTmV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Tasks/Show.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Tasks/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza3NcU2hvdy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Task_Members/Add.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Task_Members/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza19NZW1iZXJzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Team/Create.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Team/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Team/Edit.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Team/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Team/View.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Team/View.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/_ViewImports.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/_ViewStart.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Cristian/Desktop/Taskmanager/Taskmanager/Views/Shared/_Layout.cshtml]
+[C:/Users/hangh/OneDrive/Desktop/FinalProjectASP/ASP_PROJECT/Taskmanager/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-cepgsuroac

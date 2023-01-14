@@ -31,21 +31,27 @@
                 <div class="container">
                     @foreach (var i in Model.Tm)
                     {
-                        <div class="row">
+                        <div class="row mb-3">
                             <div class="col-md-4">
                             <p>@i.Email</p>
                                     
                             </div>
-                        <div class="col-md-4">
+                            <div class="col-md-4">
 
                                     
-                           </div>
+                               </div>
 
-                        <div class="col-md-4">
+                            <div class="col-md-4">
+                                @if (ViewBag.AfisareButoane == true && @Model.task.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+                            {
+                                                            
                                 <form action="/Task_Members/Delete" method="post" class=" float-end ">
                                 <input type="hidden" name="m_id" value="@i.Id">
                                 <input type="hidden" name="t_id" value="@Model.task.Id">
-                                <button type="submit" class="btn btn-lg btn-danger">Remove</button></form>
+                                <button type="submit" class="btn btn-l btn-danger">Remove</button>
+                                </form>
+                            }
+
                             </div>
                         </div>
 
@@ -61,13 +67,20 @@
                     }
                 </div>
             </div>
+
+        @if (ViewBag.AfisareButoane == true && @Model.task.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin)
+        {
             <form method="get" action="/Task_Members/Add/@Model.task.Id">
                 <button type="submit" class="btn btn-primary btn-lg mb-3 mt-3">Add Member</button>
             </form>
+        }
+
+
+            
         </div>
      
 
-     @if(ViewBag.AfisareButoane == true && @Model.task.UserId == ViewBag.UserCurent || ViewBag.EsteAdmin){
+ 
         <div class="d-flex flex-row justify-content-between p-3 border-1 border-top">
 
             <a class="btn btn-success btn-lg" href="/Tasks/Edit/@Model.task.Id">Editeaza task</a>
@@ -79,7 +92,7 @@
             </form>
 
         </div>
-     }
+  
 </div>
 
 <br />

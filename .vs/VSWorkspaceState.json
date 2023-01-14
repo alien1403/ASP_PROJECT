@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Taskmanager",
+    "\\Taskmanager\\Controllers",
+    "\\Taskmanager\\Views",
+    "\\Taskmanager\\Views\\Shared"
   ],
-  "SelectedNode": "\\Taskmanager.sln",
+  "SelectedNode": "\\Taskmanager\\Controllers\\TeamController.cs",
   "PreviewInSolutionExplorer": false
 }
