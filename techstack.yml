@@ -2,7 +2,7 @@ repo_name: alien1403/ASP_PROJECT
 report_id: cde9b2abdffeb4f9573c0ff05dd67661
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-31T08:46:39+00:00'
+timestamp: '2024-02-29T19:43:42+00:00'
 requested_by: alien1403
 provider: github
 branch: main
@@ -99,7 +99,7 @@ tools:
   last_updated_by: alien1403
   last_updated_on: 2022-12-20 12:09:56.000000000 Z
 - name: Entity Framework Core
-  description: 'Lightweight and cross-platform version of the popular Entity Framework '
+  description: Lightweight and cross-platform version of the popular Entity Framework
   website_url: https://docs.microsoft.com/en-us/ef/core/
   version: 6.0.10
   license: MIT
